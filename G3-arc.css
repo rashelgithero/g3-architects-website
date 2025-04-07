@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-
-
+body{
+  margin: 0;
+  padding: 0;
+}
 .work-sans-font{
     font-family: "Work Sans", sans-serif;
     font-optical-sizing: auto;
@@ -54,6 +56,9 @@
     max-width: 1440px;
     margin: 0 auto;
   }
+  .nav, .banner, main{
+    padding: 0 20px;
+  }
   .nav{
     justify-content: space-between;
     align-items: center;
@@ -97,7 +102,7 @@
   align-items: center;
 }
 .features-list{
-  margin-left: 130px;
+  margin-left: 100px;
   max-width: 540px;
 }
 .features-title{
@@ -106,6 +111,42 @@
 }
 #span-3{
   color:#FF900E;
+}
+/* features styles will be here */
+.features-products{
+  flex: 1;
+}
+#features-products-title{
+  border-left: 5px solid #FF900E;
+  font-size: 2.5rem;
+  padding: 0 20px;
+}
+.features-products-text{
+  margin-right: 130px;
+}
+.features-card{
+  padding: 20px;
+  box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.06);
+  margin-bottom: 20px;
+  text-align: justify;
+}
+.features-card-title{
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+#experience-batch{
+  padding: 45px 42px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-left: -90px;
+  margin-top: -130px;
+  opacity: 0.8;
+}
+#experience-year{
+  font-size: 4rem;
+  font-weight: 700;
 }
 /* some facts areas styles */
 .facts{
@@ -140,6 +181,7 @@
 .footer{
   margin-top: 130px ;
   margin-bottom: 50px;
+  margin: 130px 20px 50px 20px;
   padding: 15px 0;
   text-align: center;
 }
@@ -152,15 +194,18 @@
   text-align: center;
 }
 .sponsors-image{
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
   margin-top: 50px;
 }
   /* responsive the website for the smallest device */
-  @media screen and (max-width:576px) {
+  @media screen and (max-width: 576px) {
     section{
       margin-top: 50px;
     }
     /* responsive for the nav and banner*/
+    
     .nav, .nav-links{
       flex-direction: column;
       text-align: center;
@@ -193,14 +238,117 @@
       text-align: center;
       padding: 10px;
     }
+    /* features products relatate style */
+    .features-products{
+      flex-direction: column;
+    }
+    .features-products-text{
+      margin-right: 0;
+      margin-bottom: 70px;
+    }
+    .features-prodcuts-image >img{
+      width: 100%;
+    }
+    #experience-batch{
+      margin-top: 20px;
+      margin-left: 0;
+    }
+
+
+    /* some facts relatate styles */
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 20px;
+      justify-items: center;
+      margin: 50px 0;
+    }
+    .fact{
+      border: 1px solid green;
+      width: 180px;
+      height: 180px;
+    }
+    .fact-describe{
+      max-width: auto;
+    }
+
+    /* sponsor relate styles will be here */
+    .sponsors-image{
+      display: grid;
+      grid-template-columns: repeat(2, auto) ;
+      gap: 20px;
+    }
+    .brand-sponsor-5{
+      grid-column: 1 / span 2;
+    }
+    
+
+    /* footer styles */
+    .footer{
+      margin-top: 50px;
+    }
   }
-  /* responsive for the medium device */
   @media screen and (min-width: 576px) and (max-width: 992px) {
+    section{
+      margin-top: 80px;
+      padding: 0 20px;
+    }
+    .nav, .banner, main{
+      padding: 0 40px;
+    }
+    .nav, .nav-links{
+      flex-direction: column;
+      text-align: center;
+    }
+    .brand{
+      margin-bottom: 10px;
+    }
+    .nav-items{
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
+    .title{
+      font-size: 3rem;
+      margin-top: 20px;
+    }
     .features{
       flex-direction: column;
     }
     .features-list {
       margin-left: 0;
       text-align: center;
+      max-width: none;
     }
-  }
+    .features-image{
+      grid-template-columns: repeat(1, 1fr);
+    }
+    /* features product relatate styles */
+    .features-products{
+      flex-direction: column;
+    }
+    .features-products-text{
+      margin-right: 0;
+      margin-bottom: 70px;
+    }
+    .features-products-image img{
+      width: 100%;
+    }
+    #experience-batch{
+      margin-top: 20px;
+      margin-left: 0;
+    }
+    .facts{
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 50px;
+    }
+    .sponsors-image{
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .footer{
+      margin: 50px 40px 0px 40px ;
+    }
+}
+  
+    
